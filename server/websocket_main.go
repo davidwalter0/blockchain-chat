@@ -2,8 +2,8 @@ package server
 
 import (
 	"fmt"
+	"github.com/davidwalter0/blockchain-chat/network"
 	"github.com/gorilla/websocket"
-	"github.com/poslegm/blockchain-chat/network"
 	"time"
 )
 

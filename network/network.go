@@ -3,7 +3,7 @@ package network
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/poslegm/blockchain-chat/message"
+	"github.com/davidwalter0/blockchain-chat/message"
 	"io"
 	"net"
 	"os"

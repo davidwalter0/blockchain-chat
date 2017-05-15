@@ -1,43 +1,43 @@
 package db
 
 import (
-	"github.com/poslegm/blockchain-chat/network"
-	"github.com/boltdb/bolt"
-	"fmt"
-	"encoding/json"
 	"encoding/binary"
-	"github.com/poslegm/blockchain-chat/message"
-	"os"
+	"encoding/json"
 	"errors"
+	"fmt"
+	"github.com/boltdb/bolt"
+	"github.com/davidwalter0/blockchain-chat/message"
+	"github.com/davidwalter0/blockchain-chat/network"
+	"os"
 	"strings"
 )
 
-var db *bolt.DB;
+var db *bolt.DB
 
 var (
 	knownAddresses = []byte("knownAddresses") //addresses of known network peers
-	messages = []byte("messages") //stored messages
-	blocks = []byte("blocks") //stored blockchain blocks
-	keys = []byte("keys") //user's encryption keys
-	contacts = []byte("contacts") //contact list
-	textMessages = []byte("textMessages")
-	baseName = "data.db" //database file name
-	testBaseName = "test.db" //database file name for testing
-	neededBuckets = [][]byte{knownAddresses, messages, blocks, keys, contacts, textMessages} //needed buckets
+	messages       = []byte("messages")       //stored messages
+	blocks         = []byte("blocks")         //stored blockchain blocks
+	keys           = []byte("keys")           //user's encryption keys
+	contacts       = []byte("contacts")       //contact list
+	textMessages   = []byte("textMessages")
+	baseName       = "data.db"                                                                //database file name
+	testBaseName   = "test.db"                                                                //database file name for testing
+	neededBuckets  = [][]byte{knownAddresses, messages, blocks, keys, contacts, textMessages} //needed buckets
 )
 
 //database initialization, creating top-level buckets if they are not present
 //func InitDB(path string, mode os.FileMode, options *bolt.Options) (err error) {
 func initDB(fileName string) (err error) {
 	db, err = bolt.Open(fileName, 0660, nil)
-	if (err != nil) {
+	if err != nil {
 		return fmt.Errorf("db init: %s", err)
 	}
 	return db.Update(func(tx *bolt.Tx) error {
 		//create bucket for each needed
 		for _, bucket := range neededBuckets {
 			_, terr := tx.CreateBucketIfNotExists(bucket)
-			if (terr != nil) {
+			if terr != nil {
 				return fmt.Errorf("create bucket %s: %s", bucket, terr)
 			}
 		}
@@ -342,7 +342,7 @@ func GetTextMessagesBySender(sender string) (data []message.TextMessage, err err
 			msg := message.TextMessage{}
 			err = json.Unmarshal(v, &msg)
 			if err != nil {
-				return  fmt.Errorf("get text messages by sender unmarshal: %s", err)
+				return fmt.Errorf("get text messages by sender unmarshal: %s", err)
 			}
 			data = append(data, msg)
 		}

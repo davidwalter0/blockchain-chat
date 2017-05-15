@@ -1,8 +1,8 @@
 package server
 
 import (
-	"github.com/poslegm/blockchain-chat/db"
-	"github.com/poslegm/blockchain-chat/message"
+	"github.com/davidwalter0/blockchain-chat/db"
+	"github.com/davidwalter0/blockchain-chat/message"
 )
 
 type WebSocketMessage struct {

@@ -5,7 +5,7 @@ import (
 	"crypto/md5"
 	"fmt"
 	"github.com/btcsuite/btcutil/base58"
-	"github.com/maxwellhealth/go-gpg"
+	"github.com/davidwalter0/go-gpg"
 	"golang.org/x/crypto/openpgp"
 	"golang.org/x/crypto/openpgp/armor"
 	_ "golang.org/x/crypto/ripemd160"

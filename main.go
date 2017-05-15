@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/poslegm/blockchain-chat/db"
-	"github.com/poslegm/blockchain-chat/network"
-	"github.com/poslegm/blockchain-chat/server"
+	"github.com/davidwalter0/blockchain-chat/db"
+	"github.com/davidwalter0/blockchain-chat/network"
+	"github.com/davidwalter0/blockchain-chat/server"
 	"io/ioutil"
 	"strings"
 	"time"

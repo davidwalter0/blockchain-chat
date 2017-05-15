@@ -1,9 +1,9 @@
 package message
 
 import (
-	"testing"
-	"github.com/poslegm/blockchain-chat/shahash"
 	"fmt"
+	"github.com/davidwalter0/blockchain-chat/shahash"
+	"testing"
 )
 
 func TestMessage(t *testing.T) {

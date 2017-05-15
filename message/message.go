@@ -4,7 +4,7 @@ import (
 	"encoding/binary"
 	"encoding/json"
 	"fmt"
-	"github.com/poslegm/blockchain-chat/shahash"
+	"github.com/davidwalter0/blockchain-chat/shahash"
 )
 
 type EncryptedMessage struct {

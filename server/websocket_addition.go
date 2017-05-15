@@ -1,11 +1,11 @@
 package server
 
 import (
-	"net/http"
-	"github.com/gorilla/websocket"
-	"github.com/poslegm/blockchain-chat/db"
-	"github.com/poslegm/blockchain-chat/message"
 	"fmt"
+	"github.com/davidwalter0/blockchain-chat/db"
+	"github.com/davidwalter0/blockchain-chat/message"
+	"github.com/gorilla/websocket"
+	"net/http"
 )
 
 func handleAddition(msg WebSocketMessage) {

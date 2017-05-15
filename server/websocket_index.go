@@ -3,10 +3,10 @@ package server
 import (
 	"errors"
 	"fmt"
+	"github.com/davidwalter0/blockchain-chat/db"
+	"github.com/davidwalter0/blockchain-chat/message"
+	"github.com/davidwalter0/blockchain-chat/network"
 	"github.com/gorilla/websocket"
-	"github.com/poslegm/blockchain-chat/db"
-	"github.com/poslegm/blockchain-chat/message"
-	"github.com/poslegm/blockchain-chat/network"
 	"net/http"
 )
 

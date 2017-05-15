@@ -6,8 +6,8 @@ import (
 
 	"errors"
 	"fmt"
-	"github.com/poslegm/blockchain-chat/message"
-	"github.com/poslegm/blockchain-chat/shahash"
+	"github.com/davidwalter0/blockchain-chat/message"
+	"github.com/davidwalter0/blockchain-chat/shahash"
 )
 
 const MESSAGE = "MESSAGE"

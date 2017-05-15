@@ -1,11 +1,11 @@
 package db
 
 import (
-	"testing"
-	"github.com/poslegm/blockchain-chat/network"
 	"fmt"
+	"github.com/davidwalter0/blockchain-chat/message"
+	"github.com/davidwalter0/blockchain-chat/network"
+	"testing"
 	"time"
-	"github.com/poslegm/blockchain-chat/message"
 )
 
 func TestDB(t *testing.T) {
@@ -211,7 +211,7 @@ func TestTextMessages(t *testing.T) {
 		fmt.Println(v, " ", ver)
 	}
 	for i := 0; i < len(inMessages); i++ {
-		msg, err := GetTextMessagesBySender(inMessages[len(inMessages) - 1 - i].Sender)
+		msg, err := GetTextMessagesBySender(inMessages[len(inMessages)-1-i].Sender)
 		if err != nil {
 			t.Fatal(err)
 		}
